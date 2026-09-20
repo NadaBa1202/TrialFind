@@ -1,0 +1,1 @@
+export type { EligibilityMessage as EligibilityMessageModel } from '@prisma/client';

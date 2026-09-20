@@ -1,0 +1,14 @@
+[
+  {"id": "ft_001", "criterion": "Age 50-85 years", "patient": "I'm 72 years old.", "expected_verdict": "eligible"},
+  {"id": "ft_002", "criterion": "MMSE 18-26 inclusive", "patient": "I have mild Alzheimer's and scored a 22 on the memory test.", "expected_verdict": "insufficient_information"},
+  {"id": "ft_003", "criterion": "Clinical Dementia Rating (CDR) 0.5-2", "patient": "My diagnosis is mild Alzheimer's, my CDR came back at 1.", "expected_verdict": "eligible"},
+  {"id": "ft_004", "criterion": "Diagnosis of probable Alzheimer's disease per NIA-AA criteria", "patient": "My doctor confirmed probable Alzheimer's disease using the NIA-AA criteria.", "expected_verdict": "eligible"},
+  {"id": "ft_007", "criterion": "No current use of anticoagulant medications", "patient": "I'm not on any blood thinners right now.", "expected_verdict": "eligible"},
+  {"id": "ft_011", "criterion": "Age 50-85 years", "patient": "I just turned 45.", "expected_verdict": "not_eligible"},
+  {"id": "ft_013", "criterion": "MMSE 18-26 inclusive", "patient": "Moderate Alzheimer's, took a cognitive test and got a 14.", "expected_verdict": "insufficient_information"},
+  {"id": "ft_017", "criterion": "No history of prior treatment with an anti-amyloid monoclonal antibody", "patient": "I was on an anti-amyloid antibody treatment for a while, stopped a couple months ago.", "expected_verdict": "not_eligible"},
+  {"id": "ft_018", "criterion": "No current use of anticoagulant medications", "patient": "I take warfarin every day for my heart.", "expected_verdict": "not_eligible"},
+  {"id": "ft_021", "criterion": "MoCA 10-25", "patient": "Mild Alzheimer's, my memory test score was 22.", "expected_verdict": "insufficient_information"},
+  {"id": "ft_022", "criterion": "MMSE 18-26 inclusive", "patient": "70 years old, mild Alzheimer's diagnosis.", "expected_verdict": "insufficient_information"},
+  {"id": "ft_026", "criterion": "No history of prior treatment with an anti-amyloid monoclonal antibody", "patient": "69 years old, mild Alzheimer's, memory test score of 21.", "expected_verdict": "insufficient_information"}
+]

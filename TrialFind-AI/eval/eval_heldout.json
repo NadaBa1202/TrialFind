@@ -1,0 +1,92 @@
+[
+  {
+    "id": "eval_031",
+    "criterion": "No use of oral hypoglycemic agents",
+    "patient": "Medications: Reports taking no medications of any kind.",
+    "expected_verdict": "eligible",
+    "expected_reasoning": "The profile states an unqualified 'no medications of any kind', which covers oral hypoglycemic agents as a subcategory, even though they aren't named individually.",
+    "expected_required_measure": "Oral hypoglycemic agent use",
+    "expected_found_measure": "Medications: no medications of any kind"
+  },
+  {
+    "id": "eval_032",
+    "criterion": "No history of seizure disorder",
+    "patient": "Past Medical History: Denies any prior neurological diagnoses or hospitalizations.",
+    "expected_verdict": "eligible",
+    "expected_reasoning": "A denial of 'any prior neurological diagnoses' is a total negation that covers seizure disorder as a subcategory of neurological diagnosis.",
+    "expected_required_measure": "Seizure disorder history",
+    "expected_found_measure": "Denies any prior neurological diagnoses"
+  },
+  {
+    "id": "eval_033",
+    "criterion": "No current use of anticoagulant medications",
+    "patient": "Medications: none currently prescribed for cardiovascular conditions.",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "The negation is scoped to cardiovascular medications specifically, not to all medications, so it does not establish whether the patient is taking an anticoagulant prescribed for another reason (e.g., a non-cardiac indication).",
+    "expected_required_measure": "Anticoagulant medication use",
+    "expected_found_measure": "Medications: none currently prescribed for cardiovascular conditions"
+  },
+  {
+    "id": "eval_034",
+    "criterion": "Diagnosis of mild cognitive impairment (MCI) per Petersen criteria",
+    "patient": "Age: 68\nPatient's family reports 'increasing forgetfulness over the past 8 months'; no formal cognitive workup has been performed.",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "Family-reported symptoms without a formal diagnostic workup do not constitute a diagnosis of MCI per Petersen criteria; the diagnostic status is unconfirmed, not negative.",
+    "expected_required_measure": "Diagnosis of MCI (Petersen criteria)",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_035",
+    "criterion": "Confirmed diagnosis of major depressive disorder",
+    "patient": "Age: 74\nPatient screened positive on a depression questionnaire at a routine visit; referral to psychiatry pending, no diagnosis yet rendered.",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "A positive screening result with a pending referral is evidence a workup is underway, not a confirmed diagnosis; the criterion requires the diagnosis itself.",
+    "expected_required_measure": "Diagnosis of major depressive disorder",
+    "expected_found_measure": "Positive depression screen, psychiatry referral pending, no diagnosis rendered"
+  },
+  {
+    "id": "eval_036",
+    "criterion": "Clinical Dementia Rating (CDR) 0.5-2",
+    "patient": "Diagnosis: No cognitive impairment noted on last visit\nCDR: 1.5\nMMSE: 19",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "The diagnostic label ('no cognitive impairment') directly contradicts the reported CDR of 1.5 and MMSE of 19, both of which indicate impairment consistent with dementia. This contradiction must be flagged, not silently resolved by picking the numeric value.",
+    "expected_required_measure": "CDR score",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_037",
+    "criterion": "Female participants only",
+    "patient": "Sex: Male\nNote in chart: 'patient identifies and has been treated as female for over a decade'",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "The profile contains two conflicting statements about the patient's sex/gender relevant to this criterion; the conflict should be flagged for clarification rather than resolved unilaterally in either direction.",
+    "expected_required_measure": "Sex",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_038",
+    "criterion": "Adequate renal function (creatinine clearance >= 60 mL/min)",
+    "patient": "Age: 70\nDiagnosis: Mild Alzheimer's disease\nMMSE: 23",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "No renal function values are reported anywhere in the profile; this is simple absence of mention, not evidence of impaired or adequate renal function.",
+    "expected_required_measure": "Creatinine clearance",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_039",
+    "criterion": "No history of stroke",
+    "patient": "Past Medical History: Ischemic stroke 2 years ago with residual mild left-sided weakness.",
+    "expected_verdict": "not_eligible",
+    "expected_reasoning": "A documented history of ischemic stroke directly and explicitly contradicts this criterion; this is a genuine violation, not missing or ambiguous information.",
+    "expected_required_measure": "History of stroke",
+    "expected_found_measure": "Ischemic stroke 2 years ago with residual left-sided weakness"
+  },
+  {
+    "id": "eval_040",
+    "criterion": "MMSE 18-26 inclusive",
+    "patient": "Diagnosis: Moderate Alzheimer's disease\nMMSE: 12\nCDR: 2",
+    "expected_verdict": "not_eligible",
+    "expected_reasoning": "MMSE of 12 is a directly reported number outside the required 18-26 range; the diagnosis and CDR are consistent with this, so there is no contradiction to flag \u2014 this is a clean not_eligible case.",
+    "expected_required_measure": "MMSE score",
+    "expected_found_measure": "MMSE: 12"
+  }
+]

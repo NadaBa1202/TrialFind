@@ -1,0 +1,1 @@
+export type { Caregiver as CaregiverModel } from '@prisma/client';

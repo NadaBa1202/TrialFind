@@ -1,0 +1,1 @@
+export type { EligibilitySession as EligibilitySessionModel } from '@prisma/client';

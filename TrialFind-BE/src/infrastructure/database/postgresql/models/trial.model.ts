@@ -1,0 +1,1 @@
+export type { Trial as TrialModel } from '@prisma/client';

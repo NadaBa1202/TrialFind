@@ -1,0 +1,1 @@
+export type { Patient as PatientModel } from '@prisma/client';

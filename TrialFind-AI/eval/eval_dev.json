@@ -1,0 +1,272 @@
+[
+  {
+    "id": "eval_001",
+    "criterion": "Age 50-85 years",
+    "patient": "Age: 72",
+    "expected_verdict": "eligible",
+    "expected_reasoning": "Patient's stated age (72) falls within the required 50-85 range.",
+    "expected_required_measure": "Age",
+    "expected_found_measure": "Age: 72"
+  },
+  {
+    "id": "eval_002",
+    "criterion": "MMSE 18-26 inclusive",
+    "patient": "Diagnosis: Mild Alzheimer's disease\nMMSE: 22",
+    "expected_verdict": "eligible",
+    "expected_reasoning": "MMSE of 22 falls within the required 18-26 range.",
+    "expected_required_measure": "MMSE score",
+    "expected_found_measure": "MMSE: 22"
+  },
+  {
+    "id": "eval_003",
+    "criterion": "Clinical Dementia Rating (CDR) 0.5-2",
+    "patient": "Diagnosis: Mild Alzheimer's disease\nCDR: 1",
+    "expected_verdict": "eligible",
+    "expected_reasoning": "CDR of 1 falls within the required 0.5-2 range.",
+    "expected_required_measure": "CDR score",
+    "expected_found_measure": "CDR: 1"
+  },
+  {
+    "id": "eval_004",
+    "criterion": "Diagnosis of probable Alzheimer's disease per NIA-AA criteria",
+    "patient": "Diagnosis: Probable Alzheimer's disease, confirmed per NIA-AA diagnostic criteria",
+    "expected_verdict": "eligible",
+    "expected_reasoning": "Profile explicitly states the diagnosis matches the required criteria.",
+    "expected_required_measure": "Diagnosis (NIA-AA probable AD)",
+    "expected_found_measure": "Diagnosis: Probable Alzheimer's disease, confirmed per NIA-AA diagnostic criteria"
+  },
+  {
+    "id": "eval_005",
+    "criterion": "Must have a study partner willing to accompany the participant to visits",
+    "patient": "Age: 74\nDiagnosis: Mild Alzheimer's disease\nStudy partner: spouse, attends all visits and available by phone",
+    "expected_verdict": "eligible",
+    "expected_reasoning": "A qualifying study partner is explicitly named and described as willing to attend visits.",
+    "expected_required_measure": "Study partner status",
+    "expected_found_measure": "Study partner: spouse, attends all visits and available by phone"
+  },
+  {
+    "id": "eval_006",
+    "criterion": "No history of prior treatment with an anti-amyloid monoclonal antibody",
+    "patient": "Medication history: no prior anti-amyloid antibody treatment; currently on donepezil, stable dose for 4 months",
+    "expected_verdict": "eligible",
+    "expected_reasoning": "Profile explicitly states no prior anti-amyloid antibody treatment.",
+    "expected_required_measure": "Prior anti-amyloid mAb treatment history",
+    "expected_found_measure": "Medication history: no prior anti-amyloid antibody treatment"
+  },
+  {
+    "id": "eval_007",
+    "criterion": "No current use of anticoagulant medications",
+    "patient": "Medications: none currently prescribed",
+    "expected_verdict": "eligible",
+    "expected_reasoning": "No medications are reported, so no anticoagulant use is present.",
+    "expected_required_measure": "Anticoagulant medication use",
+    "expected_found_measure": "Medications: none currently prescribed"
+  },
+  {
+    "id": "eval_008",
+    "criterion": "No significant structural brain abnormality on MRI",
+    "patient": "Recent MRI: no significant abnormalities, consistent with AD",
+    "expected_verdict": "eligible",
+    "expected_reasoning": "MRI explicitly reports no significant abnormalities.",
+    "expected_required_measure": "MRI structural findings",
+    "expected_found_measure": "Recent MRI: no significant abnormalities, consistent with AD"
+  },
+  {
+    "id": "eval_009",
+    "criterion": "Minimum 6 years of formal education",
+    "patient": "Education: completed high school (12 years of schooling)",
+    "expected_verdict": "eligible",
+    "expected_reasoning": "12 years of schooling exceeds the 6-year minimum.",
+    "expected_required_measure": "Years of formal education",
+    "expected_found_measure": "Education: completed high school (12 years of schooling)"
+  },
+  {
+    "id": "eval_010",
+    "criterion": "Female participants only",
+    "patient": "Age: 68\nSex: Female",
+    "expected_verdict": "eligible",
+    "expected_reasoning": "Profile states patient sex is Female, matching the criterion.",
+    "expected_required_measure": "Sex",
+    "expected_found_measure": "Sex: Female"
+  },
+  {
+    "id": "eval_011",
+    "criterion": "Age 50-85 years",
+    "patient": "Age: 45",
+    "expected_verdict": "not_eligible",
+    "expected_reasoning": "Patient's age (45) is below the required minimum of 50.",
+    "expected_required_measure": "Age",
+    "expected_found_measure": "Age: 45"
+  },
+  {
+    "id": "eval_012",
+    "criterion": "Age 50-85 years",
+    "patient": "Age: 90",
+    "expected_verdict": "not_eligible",
+    "expected_reasoning": "Patient's age (90) is above the required maximum of 85.",
+    "expected_required_measure": "Age",
+    "expected_found_measure": "Age: 90"
+  },
+  {
+    "id": "eval_013",
+    "criterion": "MMSE 18-26 inclusive",
+    "patient": "Diagnosis: Moderate Alzheimer's disease\nMMSE: 14",
+    "expected_verdict": "not_eligible",
+    "expected_reasoning": "MMSE of 14 falls below the required minimum of 18.",
+    "expected_required_measure": "MMSE score",
+    "expected_found_measure": "MMSE: 14"
+  },
+  {
+    "id": "eval_014",
+    "criterion": "MMSE 18-26 inclusive",
+    "patient": "Diagnosis: Subjective cognitive concerns\nMMSE: 29",
+    "expected_verdict": "not_eligible",
+    "expected_reasoning": "MMSE of 29 is above the required maximum of 26, indicating cognition too intact for this trial's target population.",
+    "expected_required_measure": "MMSE score",
+    "expected_found_measure": "MMSE: 29"
+  },
+  {
+    "id": "eval_015",
+    "criterion": "Clinical Dementia Rating (CDR) 0.5-2",
+    "patient": "Diagnosis: cognitively normal\nCDR: 0",
+    "expected_verdict": "not_eligible",
+    "expected_reasoning": "CDR of 0 indicates no impairment, below the required minimum of 0.5.",
+    "expected_required_measure": "CDR score",
+    "expected_found_measure": "CDR: 0"
+  },
+  {
+    "id": "eval_016",
+    "criterion": "Diagnosis of probable Alzheimer's disease per NIA-AA criteria",
+    "patient": "Diagnosis: Parkinson's disease with mild cognitive symptoms",
+    "expected_verdict": "not_eligible",
+    "expected_reasoning": "The stated diagnosis is Parkinson's disease, not Alzheimer's disease, directly contradicting the criterion.",
+    "expected_required_measure": "Diagnosis (NIA-AA probable AD)",
+    "expected_found_measure": "Diagnosis: Parkinson's disease with mild cognitive symptoms"
+  },
+  {
+    "id": "eval_017",
+    "criterion": "No history of prior treatment with an anti-amyloid monoclonal antibody",
+    "patient": "Medication history: received lecanemab infusions for 6 months, discontinued 2 months ago",
+    "expected_verdict": "not_eligible",
+    "expected_reasoning": "Profile explicitly reports prior lecanemab (an anti-amyloid monoclonal antibody) treatment, which the criterion excludes.",
+    "expected_required_measure": "Prior anti-amyloid mAb treatment history",
+    "expected_found_measure": "Medication history: received lecanemab infusions for 6 months, discontinued 2 months ago"
+  },
+  {
+    "id": "eval_018",
+    "criterion": "No current use of anticoagulant medications",
+    "patient": "Medications: warfarin 5mg daily for atrial fibrillation",
+    "expected_verdict": "not_eligible",
+    "expected_reasoning": "Warfarin is an anticoagulant, and the profile confirms current daily use.",
+    "expected_required_measure": "Anticoagulant medication use",
+    "expected_found_measure": "Medications: warfarin 5mg daily for atrial fibrillation"
+  },
+  {
+    "id": "eval_019",
+    "criterion": "No significant structural brain abnormality on MRI",
+    "patient": "Recent MRI: prior ischemic stroke with 2cm infarct in left MCA territory",
+    "expected_verdict": "not_eligible",
+    "expected_reasoning": "The MRI reports a significant structural abnormality (a 2cm infarct), directly violating the criterion.",
+    "expected_required_measure": "MRI structural findings",
+    "expected_found_measure": "Recent MRI: prior ischemic stroke with 2cm infarct in left MCA territory"
+  },
+  {
+    "id": "eval_020",
+    "criterion": "In the opinion of the investigator, participant is capable of complying with study visit schedule",
+    "patient": "Investigator note: patient deemed unable to reliably comply with the visit schedule due to severe transportation barriers and inconsistent caregiver availability",
+    "expected_verdict": "not_eligible",
+    "expected_reasoning": "The investigator's documented judgment explicitly states the patient is not capable of compliance.",
+    "expected_required_measure": "Investigator judgment of compliance capability",
+    "expected_found_measure": "Investigator note: patient deemed unable to reliably comply with the visit schedule due to severe transportation barriers and inconsistent caregiver availability"
+  },
+  {
+    "id": "eval_021",
+    "criterion": "MoCA 10-25",
+    "patient": "Diagnosis: Mild Alzheimer's disease\nMMSE: 22",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "The criterion requires a MoCA score. The profile reports only an MMSE score, a different cognitive test with a different scale. MMSE cannot substitute for MoCA.",
+    "expected_required_measure": "MoCA score",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_022",
+    "criterion": "MMSE 18-26 inclusive",
+    "patient": "Age: 70\nDiagnosis: Mild Alzheimer's disease",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "No MMSE score is reported anywhere in the patient profile.",
+    "expected_required_measure": "MMSE score",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_023",
+    "criterion": "Clinical Dementia Rating (CDR) 0.5-2",
+    "patient": "Age: 70\nDiagnosis: Mild Alzheimer's disease\nMMSE: 20",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "No CDR score is reported; only MMSE is present, which does not substitute for CDR.",
+    "expected_required_measure": "CDR score",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_024",
+    "criterion": "Diagnosis of probable Alzheimer's disease per NIA-AA criteria",
+    "patient": "Age: 71\nPatient reports 'some memory problems over the past year', no formal diagnosis on record",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "Vague self-reported memory complaints do not constitute a formal NIA-AA diagnosis of probable Alzheimer's disease.",
+    "expected_required_measure": "Diagnosis (NIA-AA probable AD)",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_025",
+    "criterion": "Must have a study partner willing to accompany the participant to visits",
+    "patient": "Age: 76\nDiagnosis: Mild Alzheimer's disease\nMMSE: 20",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "The profile does not mention whether a study partner or caregiver is available.",
+    "expected_required_measure": "Study partner status",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_026",
+    "criterion": "No history of prior treatment with an anti-amyloid monoclonal antibody",
+    "patient": "Age: 69\nDiagnosis: Mild Alzheimer's disease\nMMSE: 21",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "No medication or treatment history is reported at all, so prior mAb exposure cannot be confirmed or ruled out.",
+    "expected_required_measure": "Prior anti-amyloid mAb treatment history",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_027",
+    "criterion": "Adequate hepatic and renal function (ALT/AST within normal limits, creatinine clearance >= 60 mL/min)",
+    "patient": "Age: 73\nDiagnosis: Mild Alzheimer's disease\nMMSE: 23",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "No lab values (ALT, AST, or creatinine clearance) are reported anywhere in the profile.",
+    "expected_required_measure": "Hepatic/renal lab values (ALT, AST, creatinine clearance)",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_028",
+    "criterion": "No significant structural brain abnormality on MRI",
+    "patient": "Age: 68\nDiagnosis: Mild Alzheimer's disease\nMMSE: 22",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "No MRI results are reported at all in the patient profile.",
+    "expected_required_measure": "MRI structural findings",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_029",
+    "criterion": "In the opinion of the investigator, participant is capable of complying with study visit schedule",
+    "patient": "Age: 70\nDiagnosis: Mild Alzheimer's disease\nMMSE: 21\nLives independently, drives own car",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "No investigator judgment about compliance capability is documented; lifestyle details alone don't substitute for that explicit determination.",
+    "expected_required_measure": "Investigator judgment of compliance capability",
+    "expected_found_measure": null
+  },
+  {
+    "id": "eval_030",
+    "criterion": "Mild AD dementia (MMSE 18-26, consistent with mild cognitive impairment)",
+    "patient": "Diagnosis: Healthy, no cognitive impairment\nMMSE: 15\nCDR: 2",
+    "expected_verdict": "insufficient_information",
+    "expected_reasoning": "The profile is internally contradictory: 'Healthy, no cognitive impairment' conflicts with an MMSE of 15 and CDR of 2, both of which indicate significant impairment. This contradiction must be flagged rather than silently resolved in either direction.",
+    "expected_required_measure": "Diagnosis / cognitive status (consistency check)",
+    "expected_found_measure": null
+  }
+]

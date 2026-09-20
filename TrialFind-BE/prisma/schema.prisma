@@ -1,0 +1,126 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Sex {
+  MALE
+  FEMALE
+  OTHER
+}
+
+model Caregiver {
+  id                     String    @id @default(uuid())
+  email                  String    @unique
+  password               String
+  firstName              String
+  lastName               String
+  phone                  String?
+  isEmailVerified        Boolean   @default(false)
+  refreshTokenHash       String?
+  passwordResetTokenHash String?
+  passwordResetExpiresAt DateTime?
+  failedLoginAttempts    Int       @default(0)
+  lockedUntil            DateTime?
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+  deletedAt              DateTime?
+
+  patients               Patient[]
+
+  @@map("caregivers")
+}
+
+model Patient {
+  id                      String    @id @default(uuid())
+  caregiverId             String
+  caregiver               Caregiver @relation(fields: [caregiverId], references: [id])
+  firstName               String
+  lastName                String
+  dateOfBirth             DateTime
+  sex                     Sex
+  relationshipToCaregiver String
+  conditionSummary        String?
+  city                    String?
+  region                  String?
+  country                 String?
+  createdAt               DateTime  @default(now())
+  updatedAt               DateTime  @updatedAt
+  deletedAt               DateTime?
+
+  eligibilitySessions     EligibilitySession[]
+
+  @@map("patients")
+}
+
+model Trial {
+  id                String   @id @default(uuid())
+  nctId             String   @unique
+  title             String
+  status            String
+  conditions        String[]
+  minAge            Int?
+  maxAge            Int?
+  sex               String
+  inclusionCriteria Json
+  exclusionCriteria Json
+  phases            String[]
+  briefSummary      String?
+  studyUrl          String?
+  locations         Json
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  eligibilitySessions EligibilitySession[]
+
+  @@map("trials")
+}
+
+enum EligibilityVerdict {
+  ELIGIBLE
+  LIKELY_ELIGIBLE // nothing rules the patient out; remaining criteria need the study team
+  NOT_ELIGIBLE
+  UNKNOWN
+  IN_PROGRESS
+}
+
+enum MessageRole {
+  CAREGIVER
+  ASSISTANT
+}
+
+// The conversation lives in EligibilityMessage (single source of truth, everything else is
+// re-derived from it). The old conversationTurns / lastResult / status columns were removed:
+// they were required, had no defaults, and nothing wrote to them, so creating a session failed.
+model EligibilitySession {
+  id            String             @id @default(uuid())
+  patientId     String
+  patient       Patient            @relation(fields: [patientId], references: [id])
+  trialId       String
+  trial         Trial              @relation(fields: [trialId], references: [id])
+  verdict       EligibilityVerdict @default(IN_PROGRESS)
+  verdictDetail Json?
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+  messages      EligibilityMessage[]
+
+  @@map("eligibility_sessions")
+}
+
+model EligibilityMessage {
+  id          String             @id @default(uuid())
+  sessionId   String
+  session     EligibilitySession @relation(fields: [sessionId], references: [id])
+  role        MessageRole
+  content     String
+  // On ASSISTANT messages that asked about one criterion: which one (e.g. "exclusion_3").
+  criterionId String?
+  createdAt   DateTime           @default(now())
+
+  @@index([sessionId, createdAt])
+  @@map("eligibility_messages")
+}

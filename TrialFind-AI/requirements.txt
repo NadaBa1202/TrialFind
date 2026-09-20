@@ -1,0 +1,15 @@
+# Core deterministic + RAG layer — works on a laptop, no GPU
+sentence-transformers>=2.2
+numpy
+
+# GPU-only layer (used only inside llm.py, only on Kaggle)
+# torch
+# transformers
+# accelerate
+# bitsandbytes
+
+# Dev/test
+pytest
+fastapi
+uvicorn
+pydantic
