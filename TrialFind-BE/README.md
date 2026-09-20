@@ -289,6 +289,3 @@ The tests use a fake model and never need a GPU. They cover section-aware judgin
 
 Nada Ben Abdelhafidh
 
-## License
-
-<choose a license, or "All rights reserved" for now>
